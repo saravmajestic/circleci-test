@@ -24,8 +24,8 @@ jobs:
           name: code-coverage
           command: npm test -- --coverage
       - store_test_results:
-          path: ./coverage/results/
-        - store_artifacts:
+          path: ./coverage/results
+      - store_artifacts:
           path: ./coverage/results/test-results.xml
           prefix: tests
       - store_artifacts:
