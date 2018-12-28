@@ -23,11 +23,12 @@ jobs:
       - run:
           name: code-coverage
           command: npm test -- --coverage
-      - store_artifacts:
-          path: ./__tests__/results/test-results.xml
+      - store_test_results:
+          path: ./coverage/results/
+        - store_artifacts:
+          path: ./coverage/results/test-results.xml
           prefix: tests
       - store_artifacts:
-          path: ./__tests__/results/coverage
+          path: ./coverage
           prefix: coverage
-      - store_test_results:
-          path: ./__tests__/results/test-results.xml
+      
